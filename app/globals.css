@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --marun: #8b1a1a;
+    --gold: #c9a84c;
+    --gading: #fafaf7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--gading);
+    color: #2b2320;
+    font-feature-settings: "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-playfair), serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Tombol utama */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-marun px-6 py-3
+      text-sm font-semibold text-white shadow-sm transition
+      hover:bg-marun-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-gold
+      focus-visible:ring-offset-2 focus-visible:ring-offset-gading;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-marun
+      bg-transparent px-6 py-3 text-sm font-semibold text-marun transition
+      hover:bg-marun hover:text-white focus:outline-none focus-visible:ring-2
+      focus-visible:ring-gold focus-visible:ring-offset-2;
+  }
+
+  .btn-wa {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3
+      text-sm font-semibold text-white shadow-sm transition hover:bg-[#1eb356]
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]
+      focus-visible:ring-offset-2;
+  }
+
+  /* Chip kategori / filter */
+  .chip {
+    @apply inline-flex items-center rounded-full border border-gold/60 bg-white px-4 py-1.5
+      text-sm font-medium text-marun transition hover:border-gold hover:bg-gold/10;
+  }
+
+  .chip-active {
+    @apply border-marun bg-marun text-white hover:bg-marun hover:border-marun;
+  }
+
+  /* Label seksi kecil */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-dark;
+  }
+
+  .card {
+    @apply overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition
+      hover:-translate-y-1 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  /* Divider bermotif songket tipis (pucuak rabuang) */
+  .songket-divider {
+    height: 14px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--gold) 0,
+      var(--gold) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Garis tipis emas sebagai aksen di bawah judul */
+  .accent-underline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accent-underline::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 0.35rem;
+    background: linear-gradient(90deg, var(--marun), var(--gold));
+    border-radius: 9999px;
+  }
+
+  .accent-underline-center {
+    align-items: center;
+  }
+
+  .accent-underline-center::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --- Penyesuaian peta Leaflet (tampilan ala Google Maps) --- */
+.leaflet-container {
+  font-family: var(--font-inter), sans-serif;
+  z-index: 0;
+  background: #eaeaea;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--gading) !important;
+  color: #2b2320 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(201, 168, 76, 0.3) !important;
+  box-shadow: 0 10px 25px -5px rgba(139, 26, 26, 0.15), 0 8px 10px -6px rgba(139, 26, 26, 0.1) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 260px !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--gading) !important;
+  box-shadow: none !important;
+}
+
+/* Custom Close Button for Leaflet Popups */
+.leaflet-container a.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  width: 24px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+  font-size: 14px !important;
+  color: #4a4a4a !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  z-index: 1000;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  background: #ffffff !important;
+  color: var(--marun) !important;
+  transform: scale(1.05);
+}
+
+/* Override default links in Leaflet popup to respect Tailwind classes */
+.leaflet-popup-content-wrapper a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+
+/* Marker pin: bayangan + animasi muncul + efek hover */
+.umkm-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.4));
+  transition: transform 0.18s ease;
+  transform-origin: bottom center;
+}
+.umkm-marker:hover .umkm-pin {
+  transform: scale(1.18) translateY(-2px);
+}
+
+/* Kontrol zoom & layer: sudut membulat, aksen tema */
+.leaflet-bar {
+  border: none !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.3) !important;
+}
+.leaflet-bar a {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  color: #6e1414;
+  font-size: 18px;
+  transition: background-color 0.15s, color 0.15s;
+}
+.leaflet-bar a:hover {
+  background-color: #8b1a1a;
+  color: #fff;
+}
+
+/* Kotak pemilih layer (Peta / Satelit) */
+.leaflet-control-layers {
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px -4px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden;
+}
+.leaflet-control-layers-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  background-size: 20px 20px;
+}
+.leaflet-control-layers-expanded {
+  padding: 10px 12px !important;
+  font-size: 0.85rem;
+  color: #2b2320;
+}
+.leaflet-control-layers label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0;
+  cursor: pointer;
+}
+
+/* Atribusi lebih ringkas */
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 6px 0 0 0;
+  font-size: 10px;
+  color: #666;
+}

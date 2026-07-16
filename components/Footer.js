@@ -1,0 +1,112 @@
+import Link from "next/link";
+import Image from "next/image";
+import { IconMapPin, IconMail, IconPhone } from "@/components/Icons";
+
+const MENU = [
+  { label: "Beranda", href: "/" },
+  { label: "Direktori UMKM", href: "/umkm" },
+  { label: "Galeri", href: "/galeri" },
+  { label: "Peta Lokasi", href: "/peta" },
+  { label: "Tentang", href: "/tentang" },
+  { label: "Kontak", href: "/kontak" },
+];
+
+export default function Footer() {
+  const tahun = 2026;
+  return (
+    <footer className="mt-20 bg-marun-dark text-gading">
+      <div className="songket-divider opacity-70" />
+      <div className="container grid gap-10 py-14 md:grid-cols-4">
+        {/* Brand */}
+        <div className="md:col-span-2">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo.svg"
+              alt="Logo UMKM Pandai Sikek"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full bg-white/5 p-1"
+            />
+            <div>
+              <p className="font-heading text-lg font-bold">UMKM Nagari Pandai Sikek</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-gold-light">
+                Warisan Tenun Songket Minangkabau
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-gading/80">
+            Direktori digital UMKM Nagari Pandai Sikek, Kecamatan X Koto,
+            Kabupaten Tanah Datar, Sumatera Barat. Mendukung pengrajin tenun
+            songket dan produk khas Minangkabau agar lebih dikenal luas.
+          </p>
+        </div>
+
+        {/* Navigasi */}
+        <div>
+          <h3 className="font-heading text-base font-semibold text-gold-light">
+            Navigasi
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            {MENU.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-gading/80 transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Kontak nagari */}
+        <div>
+          <h3 className="font-heading text-base font-semibold text-gold-light">
+            Kontak Nagari
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-gading/80">
+            <li className="flex gap-3">
+              <IconMapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
+              <span>
+                Kantor Wali Nagari Pandai Sikek, Kec. X Koto, Kab. Tanah Datar,
+                Sumatera Barat 27151
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <IconPhone className="h-5 w-5 shrink-0 text-gold-light" />
+              <a href="tel:+6275200000" className="transition hover:text-white">
+                (0752) 000000
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <IconMail className="h-5 w-5 shrink-0 text-gold-light" />
+              <a
+                href="mailto:nagaripandaisikek@gmail.com"
+                className="transition hover:text-white"
+              >
+                nagaripandaisikek@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Credit */}
+      <div className="border-t border-white/10">
+        <div className="container flex flex-col items-center justify-between gap-2 py-6 text-center text-xs text-gading/70 md:flex-row md:text-left">
+          <p>
+            © {tahun} UMKM Nagari Pandai Sikek. Seluruh hak cipta dilindungi.
+          </p>
+          <p>
+            Dikembangkan oleh{" "}
+            <span className="font-semibold text-gold-light">
+              Tim KKN Nagari Pandai Sikek
+            </span>{" "}
+            · Universitas Andalas
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

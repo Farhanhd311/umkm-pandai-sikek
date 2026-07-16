@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Selendang Saluak Laka">
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7A2E2E"/>
+      <stop offset="100%" stop-color="#5C1E1E"/>
+    </linearGradient>
+    
+  <pattern id="motif1" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+    <rect width="60" height="60" fill="none"/>
+    <path d="M30 8 L46 40 L14 40 Z" fill="none" stroke="#E3CE8C" stroke-width="1.6" opacity="0.55"/>
+    <path d="M30 20 L38 40 L22 40 Z" fill="#E3CE8C" opacity="0.35"/>
+    <circle cx="30" cy="50" r="2.2" fill="#E3CE8C" opacity="0.6"/>
+    <path d="M0 0 L60 60 M60 0 L0 60" stroke="#E3CE8C" stroke-width="0.5" opacity="0.12"/>
+  </pattern>
+  </defs>
+  <rect width="600" height="600" fill="url(#grad1)"/>
+  <rect width="600" height="600" fill="url(#motif1)"/>
+  <rect x="14" y="14" width="572" height="572" fill="none" stroke="#E3CE8C" stroke-width="2" opacity="0.6"/>
+  <rect x="20" y="20" width="560" height="560" fill="none" stroke="#E3CE8C" stroke-width="0.8" opacity="0.4"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="300" y="294" fill="#FAFAF7" font-size="33" font-weight="700">Selendang Saluak Laka</text>
+    <text x="300" y="350" fill="#E3CE8C" font-size="18" letter-spacing="2" font-family="Arial, sans-serif">PRODUK</text>
+  </g>
+</svg>
