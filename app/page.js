@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import YouTubeEmbed from "@/components/YouTubeEmbed";
 import UMKMCard from "@/components/UMKMCard";
 import SongketDivider from "@/components/SongketDivider";
 import Reveal from "@/components/Reveal";
@@ -16,15 +15,18 @@ export default function HomePage() {
     <>
       {/* ============ HERO ============ */}
       <section className="relative flex min-h-[88vh] items-center justify-center overflow-hidden">
-        <YouTubeEmbed
-          url={site.heroVideoUrl}
-          title="Video Nagari Pandai Sikek"
-          mode="background"
-        />
-        <div className="absolute inset-0 -z-10">
-          <Image src="/images/hero-fallback.svg" alt="" fill priority className="object-cover" />
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-rumah-gadang.png"
+            alt="Rumah Gadang Nagari Pandai Sikek"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/55 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-marun-dark/90 via-marun-dark/25 to-transparent" />
 
         <div className="container relative z-10 py-24 text-center text-white">
           <p className="eyebrow justify-center text-gold-light animate-fade-in-up">
@@ -111,7 +113,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-8">
               <Stat icon={<IconScissors className="h-5 w-5" />} angka={`${total}+`} label="UMKM Terdaftar" />
               <Stat icon={<IconShop className="h-5 w-5" />} angka="20+" label="Produk Unggulan" />
-              <Stat icon={<IconMapPin className="h-5 w-5" />} angka="3" label="Jorong" />
+              <Stat icon={<IconMapPin className="h-5 w-5" />} angka="4" label="Jorong" />
             </div>
           </Reveal>
         </div>
@@ -186,7 +188,7 @@ function Stat({ icon, angka, label }) {
         {icon}
       </span>
       <div>
-        <p className="font-heading text-2xl font-bold text-marun">{angka}</p>
+        <p className="font-body text-3xl font-extrabold tracking-tight text-marun">{angka}</p>
         <p className="text-xs text-neutral-500">{label}</p>
       </div>
     </div>

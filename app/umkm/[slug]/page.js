@@ -9,6 +9,7 @@ import {
   IconWhatsApp,
   IconInstagram,
   IconFacebook,
+  IconTikTok,
   IconShop,
   IconMapPin,
   IconClock,
@@ -62,12 +63,21 @@ export default function DetailUmkmPage({ params }) {
       <article className="container py-10 md:py-14">
         {/* Header Profil Utama - Centered & Full Width */}
         <Reveal>
-          <div className="mx-auto max-w-3xl text-center flex flex-col items-center">
+          <div
+            className={`mx-auto text-center flex flex-col items-center ${
+              umkm.nama.length > 28 ? "max-w-6xl" : "max-w-3xl"
+            }`}
+          >
           <span className="inline-flex items-center gap-1.5 rounded-full bg-marun/10 px-3 py-1 text-xs font-semibold text-marun">
-            <IconScissors className="h-3.5 w-3.5" />
             {umkm.kategori}
           </span>
-          <h1 className="mt-3 font-heading text-4xl font-bold text-neutral-900 md:text-5xl">
+          <h1
+            className={`mt-3 font-heading font-bold text-neutral-900 ${
+              umkm.nama.length > 28
+                ? "text-3xl md:text-4xl lg:text-5xl"
+                : "text-4xl md:text-5xl"
+            }`}
+          >
             {umkm.nama}
           </h1>
           <p className="mt-2 flex items-center justify-center gap-1.5 text-sm text-neutral-500">
@@ -121,6 +131,12 @@ export default function DetailUmkmPage({ params }) {
               )}
               {umkm.kontak.tokopedia && (
                 <SocialLink href={`https://tokopedia.com/${umkm.kontak.tokopedia}`} icon={<IconShop className="h-4 w-4" />} label="Tokopedia" />
+              )}
+              {umkm.kontak.shopee && (
+                <SocialLink href={`https://shopee.co.id/${umkm.kontak.shopee}`} icon={<IconShop className="h-4 w-4" />} label="Shopee" />
+              )}
+              {umkm.kontak.tiktok && (
+                <SocialLink href={`https://tiktok.com/@${umkm.kontak.tiktok.replace(/\s+/g, "")}`} icon={<IconTikTok className="h-4 w-4" />} label="TikTok" />
               )}
             </div>
           </div>

@@ -75,8 +75,8 @@ bisa_dikunjungi, layanan_kirim, terima_custom, penghargaan[]`
   foto asli (`.jpg`/`.png`/`.webp`) lalu perbarui path di `data/umkm.json`.
   Setelah tidak ada lagi SVG, Anda dapat mematikan `dangerouslyAllowSVG` di
   [`next.config.js`](next.config.js).
-- **Video hero**: ubah `heroVideoUrl` di [`lib/site.js`](lib/site.js) dengan URL
-  YouTube nagari.
+- **Foto hero**: ganti file `public/images/hero-rumah-gadang.png` dengan foto
+  lain, atau ubah path-nya di [`app/page.js`](app/page.js).
 - **Info kontak & KKN**: ubah di [`lib/site.js`](lib/site.js).
 
 ## Deploy ke Vercel

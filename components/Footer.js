@@ -30,14 +30,14 @@ export default function Footer() {
             <div>
               <p className="font-heading text-lg font-bold">UMKM Nagari Pandai Sikek</p>
               <p className="text-xs uppercase tracking-[0.18em] text-gold-light">
-                Warisan Tenun Songket Minangkabau
+                Warisan &amp; UMKM Nagari Minangkabau
               </p>
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-gading/80">
             Direktori digital UMKM Nagari Pandai Sikek, Kecamatan X Koto,
-            Kabupaten Tanah Datar, Sumatera Barat. Mendukung pengrajin tenun
-            songket dan produk khas Minangkabau agar lebih dikenal luas.
+            Kabupaten Tanah Datar, Sumatera Barat. Mendukung pelaku UMKM
+            dan produk khas Minangkabau agar lebih dikenal luas.
           </p>
         </div>
 

@@ -3,7 +3,8 @@
     "Tenun Songket",
     "Kain & Sarung",
     "Aksesoris & Suvenir",
-    "Kuliner"
+    "Kuliner",
+    "Agrowisata"
   ],
   "umkm": [
     {
@@ -184,6 +185,143 @@
       "terima_custom": false,
       "penghargaan": [
         "Sentra Suvenir Terbaik Festival Pesona Minangkabau 2022"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "fragaria-strawberry",
+      "nama": "Fragaria Strawberry",
+      "pemilik": "Ahmad Suryanto",
+      "tahun_berdiri": 2013,
+      "alamat": "Jorong Koto Tinggi, Nagari Pandai Sikek, Kec. X Koto, Kab. Tanah Datar",
+      "jorong": "Koto Tinggi",
+      "koordinat": { "lat": -0.3861178, "lng": 100.3938644 },
+      "kategori": "Agrowisata",
+      "deskripsi": "Agroeduwisata kebun strawberry pertama di Pandai Sikek, dilengkapi kebun anggur brazil, jambu madu, dan ubi madu, kolam pancing, kafe, serta aneka olahan khas seperti selai, strawberry hot sauce, eskrim, pancake, hingga ikan bakar saus strawberry.",
+      "cerita": "Fragaria Strawberry dirintis oleh Ahmad Suryanto, yang sebelumnya berprofesi sebagai guru bahasa Arab tingkat SMP dan SMA hingga tahun 2007. Setelah resign, beliau sempat merintis usaha penerbitan (publishing) dari tahun 2008 hingga sekitar 2013 yang mengharuskannya sering bepergian ke luar kota. Karena sang istri ingin bekerja dari rumah, keluarga ini beralih ke usaha berkebun dan akhirnya menemukan strawberry sebagai komoditas yang cocok. Usaha ini lebih ringan dikerjakan, membuka banyak relasi baru, dan sekaligus bisa mengedukasi masyarakat lewat konsep agroeduwisata mulai dari jenjang TK hingga perguruan tinggi.\n\nFragaria juga tercatat sebagai salah satu kebun strawberry pertama di kawasan ini, sehingga hingga kini masih menjadi rujukan utama dan aktif mengajak pelaku usaha lain untuk turut berkembang bersama. Dahulu sempat ada tawaran ribuan bibit strawberry dari wali nagari agar kawasan ini dikenal sebagai 'Gang Strawberry', namun rencana tersebut tidak disetujui pihak terkait. Akibatnya, yang lebih dikenal luas justru lokasi lain, padahal Fragaria adalah pencetus awalnya.\n\nKini, selain kebun strawberry sebagai ikon utama, Fragaria juga membudidayakan anggur brazil, jambu madu, dan ubi madu, dilengkapi kafe dan aneka olahan khas seperti selai, strawberry hot sauce, eskrim, pancake, hingga ikan bakar saus strawberry. Pengunjung bisa datang langsung, memetik buah sendiri, hingga memancing ikan yang akan diolah menjadi menu andalan. Usaha ini telah mengantongi Tanda Daftar Perusahaan Perorangan (sesuai UU RI No. 3 Tahun 1982 tentang Wajib Daftar Perusahaan), Surat Izin Usaha Perdagangan (SIUP), serta Tanda Daftar Usaha Pariwisata.",
+      "produk_unggulan": [
+        {
+          "nama": "Strawberry Smoothies",
+          "deskripsi": "Minuman smoothies segar berbahan strawberry hasil petik langsung dari kebun Fragaria.",
+          "harga_min": 20000,
+          "harga_max": 20000,
+          "foto": "/images/umkm/fragaria-strawberry/produk/strawberry-smoothies.png"
+        },
+        {
+          "nama": "Ikan Bakar Saus Strawberry",
+          "deskripsi": "Ikan hasil memancing langsung di kolam Fragaria, dibakar dengan saus strawberry khas yang menjadi menu andalan agroeduwisata ini.",
+          "harga_min": 35000,
+          "harga_max": 35000,
+          "foto": "/images/umkm/fragaria-strawberry/produk/ikan-bakar-strawberry.png"
+        },
+        {
+          "nama": "Selai & Strawberry Hot Sauce",
+          "deskripsi": "Olahan selai strawberry dan saus pedas strawberry buatan sendiri, cocok dijadikan oleh-oleh khas Pandai Sikek.",
+          "harga_min": 26400,
+          "harga_max": 26400,
+          "foto": "/images/umkm/fragaria-strawberry/produk/selai-strawberry-hot-sauce.png"
+        },
+        {
+          "nama": "Strawberry Creamy",
+          "deskripsi": "Minuman creamy rasa strawberry yang segar, favorit pengunjung anak-anak maupun dewasa.",
+          "harga_min": 7000,
+          "harga_max": 7000,
+          "foto": "/images/umkm/fragaria-strawberry/produk/strawberry-creamy.png"
+        }
+      ],
+      "foto_utama": "/images/umkm/fragaria-strawberry/cover/cover.png",
+      "galeri": [
+        "/images/umkm/fragaria-strawberry/galeri/galeri-1.jpeg",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-2.jpeg",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-3.jpeg",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-4.jpeg",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-5.jpeg",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-6.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-7.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-8.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-9.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-10.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-11.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-12.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-13.png",
+        "/images/umkm/fragaria-strawberry/galeri/galeri-14.png"
+      ],
+      "jam_buka": {
+        "senin_jumat": "08.00 - 20.00 WIB",
+        "sabtu": "08.00 - 20.00 WIB",
+        "minggu": "08.00 - 20.00 WIB"
+      },
+      "kontak": {
+        "whatsapp": "6281374180062",
+        "instagram": "fragariagarden",
+        "facebook": "",
+        "tokopedia": "",
+        "shopee": "",
+        "tiktok": "yummyfragaria"
+      },
+      "bisa_dikunjungi": true,
+      "layanan_kirim": false,
+      "terima_custom": true,
+      "penghargaan": []
+    },
+    {
+      "id": 5,
+      "slug": "rumah-songket-gusni",
+      "nama": "Rumah Songket Pandai Sikek Gusni",
+      "pemilik": "Gusni",
+      "tahun_berdiri": 2017,
+      "alamat": "Jorong Koto Tinggi, Nagari Pandai Sikek, Kec. X Koto, Kab. Tanah Datar",
+      "jorong": "Koto Tinggi",
+      "koordinat": { "lat": -0.3866726, "lng": 100.3905926 },
+      "kategori": "Tenun Songket",
+      "deskripsi": "Rumah produksi sekaligus galeri songket asli Pandai Sikek yang menjual kain songket, aksesoris berbahan songket, kaligrafi songket, hingga hiasan rumah adat bermotif songket, dengan keaslian produk yang terjamin dan sudah menggunakan standar MPIG.",
+      "cerita": "Ketertarikan Gusni pada songket bermula dari pengalaman pribadi. Di Pandai Sikek, ada tradisi bahwa jika seorang laki-laki asli Pandai Sikek menikah, keluarganya akan diberi satu set songket lengkap beserta pakaian adat lainnya, apa pun asal daerah pasangannya. Namun Gusni menikah dengan laki-laki yang bukan berasal dari Pandai Sikek, sehingga ia tidak mendapatkan songket sebagaimana budaya Pandai Sikek pada umumnya. Pengalaman itulah yang mendorongnya untuk suatu saat memiliki songket sendiri.\n\nUsaha Rumah Songket Pandai Sikek Gusni sendiri berawal dari kisah pribadi Gusni, anak bungsu dari tujuh bersaudara. Sepeninggal ayahnya, uang hasil gadai tanah keluarga dibagi rata kepada setiap anak, masing-masing mendapat Rp1.000.000. Gusni sempat bingung menggunakan uang tersebut. Kalau untuk belanja kebutuhan sehari-hari, uangnya terlalu cepat habis, sementara untuk membeli emas jumlahnya belum cukup.\n\nSuatu ketika, Gusni bertemu seorang perempuan yang bekerja sebagai buruh cuci dan meminjam uang Rp700.000 untuk biaya kos. Belakangan diketahui bahwa perempuan tersebut adalah seorang penenun. Saat utangnya hendak dilunasi, ia menawarkan kepada Gusni: dibayar dengan uang atau dengan kain songket saja? Gusni pun menambahkan sejumlah uang dari sisa Rp1.000.000 miliknya agar bisa menukar piutang itu dengan selembar kain songket, sehingga akhirnya ia memiliki songket idamannya sendiri. Dari situlah ia juga mulai diperkenalkan ke rumah pengrajin tenun untuk belajar menenun secara langsung.\n\nKain songket pertama yang awalnya hanya berniat untuk dipakai sendiri itu ternyata banyak diminati orang lain. Ada yang menawar hingga terjual Rp1.700.000, kemudian kain berikutnya laku Rp1.800.000, dan permintaan terus berdatangan dari orang ke orang. Dari perputaran hasil penjualan itulah Gusni akhirnya mampu membeli alat tenun sendiri dan mulai memproduksi songket secara mandiri, hingga berkembang menjadi usaha tenun songket yang ia jalankan sampai sekarang.\n\nRumah Songket Gusni menjaga kualitas produknya dengan ketat, tidak pernah mencampur hasil tenunnya dengan songket dari daerah lain seperti songket Halaban, dan hanya menjual produk asli buatan Pandai Sikek. Usaha ini juga telah menerapkan standar Masyarakat Perlindungan Indikasi Geografis (MPIG) untuk menjamin keaslian setiap produknya.",
+      "produk_unggulan": [
+        {
+          "nama": "Kain Songket Salendang & Sarung",
+          "deskripsi": "Kain songket salendang dan sarung asli Pandai Sikek, ditenun langsung oleh Gusni dengan motif klasik.",
+          "harga_min": 6000000,
+          "harga_max": 7000000,
+          "foto": "/images/produk-songket-10.svg"
+        },
+        {
+          "nama": "Kaligrafi Songket",
+          "deskripsi": "Hiasan kaligrafi bermotif tenun songket, cocok sebagai dekorasi rumah maupun hadiah istimewa.",
+          "harga_min": 2000000,
+          "harga_max": 2000000,
+          "foto": "/images/produk-songket-11.svg"
+        },
+        {
+          "nama": "Gambar Rumah Adat Songket",
+          "deskripsi": "Hiasan dinding berbentuk rumah adat Minangkabau yang ditenun dari benang songket.",
+          "harga_min": 2000000,
+          "harga_max": 2000000,
+          "foto": "/images/produk-songket-12.svg"
+        }
+      ],
+      "foto_utama": "/images/umkm-4.svg",
+      "galeri": [
+        "/images/galeri-4-1.svg",
+        "/images/galeri-4-2.svg"
+      ],
+      "jam_buka": {
+        "senin_jumat": "08.00 WIB - Fleksibel (rumah tinggal pemilik)",
+        "sabtu": "08.00 WIB - Fleksibel (rumah tinggal pemilik)",
+        "minggu": "08.00 WIB - Fleksibel (rumah tinggal pemilik)"
+      },
+      "kontak": {
+        "whatsapp": "6282387180324",
+        "instagram": "",
+        "facebook": "",
+        "tokopedia": "",
+        "shopee": "",
+        "tiktok": "songketpandaisikekgusni"
+      },
+      "bisa_dikunjungi": true,
+      "layanan_kirim": true,
+      "terima_custom": true,
+      "penghargaan": [
+        "Tiga kali mengikuti pameran festival di Pagaruyung, Batusangkar"
       ]
     }
   ]

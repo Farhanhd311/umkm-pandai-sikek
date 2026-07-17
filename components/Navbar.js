@@ -58,7 +58,7 @@ export default function Navbar() {
               UMKM Pandai Sikek
             </span>
             <span className="text-[11px] uppercase tracking-[0.18em] text-gold-dark">
-              Warisan Tenun Songket
+              Warisan &amp; UMKM Nagari
             </span>
           </span>
         </Link>

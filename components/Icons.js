@@ -25,6 +25,14 @@ export function IconFacebook(props) {
   );
 }
 
+export function IconTikTok(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M16.6 5.82c-.98-.86-1.6-2.06-1.66-3.32V2h-3.4v13.4a2.6 2.6 0 11-2.15-2.56v-3.44a5.99 5.99 0 00-.85-.06A6.02 6.02 0 108 21.4a6.02 6.02 0 006-6.02v-6.8a8.35 8.35 0 004.6 1.38V6.56a4.83 4.83 0 01-2-.74Z" />
+    </svg>
+  );
+}
+
 export function IconShop(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
