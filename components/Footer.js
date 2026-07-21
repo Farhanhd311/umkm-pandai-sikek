@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IconMapPin, IconMail, IconPhone } from "@/components/Icons";
 
 const MENU = [
   { label: "Beranda", href: "/" },
@@ -8,7 +7,6 @@ const MENU = [
   { label: "Galeri", href: "/galeri" },
   { label: "Peta Lokasi", href: "/peta" },
   { label: "Tentang", href: "/tentang" },
-  { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Footer() {
@@ -16,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="mt-20 bg-marun-dark text-gading">
       <div className="songket-divider opacity-70" />
-      <div className="container grid gap-10 py-14 md:grid-cols-4">
+      <div className="container grid gap-10 py-14 md:grid-cols-3">
         {/* Brand */}
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
@@ -59,37 +57,6 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-
-        {/* Kontak nagari */}
-        <div>
-          <h3 className="font-heading text-base font-semibold text-gold-light">
-            Kontak Nagari
-          </h3>
-          <ul className="mt-4 space-y-3 text-sm text-gading/80">
-            <li className="flex gap-3">
-              <IconMapPin className="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
-              <span>
-                Kantor Wali Nagari Pandai Sikek, Kec. X Koto, Kab. Tanah Datar,
-                Sumatera Barat 27151
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <IconPhone className="h-5 w-5 shrink-0 text-gold-light" />
-              <a href="tel:+6275200000" className="transition hover:text-white">
-                (0752) 000000
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <IconMail className="h-5 w-5 shrink-0 text-gold-light" />
-              <a
-                href="mailto:nagaripandaisikek@gmail.com"
-                className="transition hover:text-white"
-              >
-                nagaripandaisikek@gmail.com
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
 
       {/* Credit */}
@@ -101,7 +68,7 @@ export default function Footer() {
           <p>
             Dikembangkan oleh{" "}
             <span className="font-semibold text-gold-light">
-              Tim KKN Nagari Pandai Sikek
+              Tim KKN Nagari Pandai Sikek Periode II 2026
             </span>{" "}
             · Universitas Andalas
           </p>

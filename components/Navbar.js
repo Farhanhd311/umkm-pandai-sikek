@@ -11,7 +11,6 @@ const MENU = [
   { label: "Galeri", href: "/galeri" },
   { label: "Peta", href: "/peta" },
   { label: "Tentang", href: "/tentang" },
-  { label: "Kontak", href: "/kontak" },
 ];
 
 export default function Navbar() {

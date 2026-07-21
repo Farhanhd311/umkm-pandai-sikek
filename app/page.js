@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import { IconArrowRight, IconMapPin, IconScissors, IconShop } from "@/components/Icons";
 import { getUmkmUnggulan, getAllUmkm } from "@/lib/umkm";
 import { site } from "@/lib/site";
+import { waLink } from "@/lib/format";
 
 export default function HomePage() {
   const unggulan = getUmkmUnggulan(3);
@@ -27,6 +28,7 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-marun-dark/90 via-marun-dark/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gading to-transparent" />
 
         <div className="container relative z-10 py-24 text-center text-white">
           <p className="eyebrow justify-center text-gold-light animate-fade-in-up">
@@ -167,13 +169,15 @@ export default function HomePage() {
               Bergabunglah dalam direktori UMKM ini agar produk Anda dikenal lebih
               luas. Hubungi tim KKN atau pemerintah nagari untuk pendaftaran.
             </p>
-            <Link
-              href="/kontak"
+            <a
+              href={waLink(site.kontak.whatsapp, "Halo, saya ingin mendaftarkan UMKM saya ke direktori UMKM Pandai Sikek.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-marun-dark transition hover:bg-gold-light"
             >
               Daftarkan UMKM Anda
               <IconArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </section>
       </Reveal>

@@ -63,31 +63,48 @@ export default function DetailUmkmPage({ params }) {
       <article className="container py-10 md:py-14">
         {/* Header Profil Utama - Centered & Full Width */}
         <Reveal>
-          <div
-            className={`mx-auto text-center flex flex-col items-center ${
-              umkm.nama.length > 28 ? "max-w-6xl" : "max-w-3xl"
-            }`}
-          >
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-marun/10 px-3 py-1 text-xs font-semibold text-marun">
-            {umkm.kategori}
-          </span>
-          <h1
-            className={`mt-3 font-heading font-bold text-neutral-900 ${
-              umkm.nama.length > 28
-                ? "text-3xl md:text-4xl lg:text-5xl"
-                : "text-4xl md:text-5xl"
-            }`}
-          >
-            {umkm.nama}
-          </h1>
-          <p className="mt-2 flex items-center justify-center gap-1.5 text-sm text-neutral-500">
-            <IconMapPin className="h-4 w-4 text-gold-dark" />
-            Jorong {umkm.jorong} · Berdiri {umkm.tahun_berdiri}
-          </p>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-marun/[0.07] via-gold/[0.06] to-transparent px-6 py-12 md:py-16">
+            {/* Aksen motif tipis di latar */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-[0.05]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(135deg, #8B1A1A 0, #8B1A1A 2px, transparent 2px, transparent 14px)",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent"
+            />
 
-          <p className="mt-5 text-[16px] leading-relaxed text-neutral-600">
-            {umkm.deskripsi}
-          </p>
+            <div
+              className={`relative mx-auto text-center flex flex-col items-center ${
+                umkm.nama.length > 28 ? "max-w-6xl" : "max-w-3xl"
+              }`}
+            >
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-marun px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold-light shadow-sm shadow-marun/20">
+              {umkm.kategori}
+            </span>
+            <h1
+              className={`mt-4 font-heading font-bold text-marun-dark ${
+                umkm.nama.length > 28
+                  ? "text-3xl md:text-4xl lg:text-5xl"
+                  : "text-4xl md:text-5xl"
+              }`}
+            >
+              {umkm.nama}
+            </h1>
+            <div className="mt-4 h-[3px] w-14 rounded-full bg-gradient-to-r from-gold to-marun" />
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-sm font-medium text-neutral-600">
+              <IconMapPin className="h-4 w-4 text-gold-dark" />
+              Jorong {umkm.jorong} · Berdiri {umkm.tahun_berdiri}
+            </p>
+
+            <p className="mt-5 text-[16px] leading-relaxed text-neutral-600 text-justify">
+              {umkm.deskripsi}
+            </p>
+            </div>
           </div>
         </Reveal>
 
@@ -95,16 +112,20 @@ export default function DetailUmkmPage({ params }) {
         <Reveal delay={100}>
           <div className="mx-auto max-w-2xl mt-8 space-y-6">
           {/* Info pemilik + layanan */}
-          <dl className="space-y-3 rounded-2xl border border-black/5 bg-white p-5 text-sm shadow-sm">
-            <div className="flex justify-between gap-4">
+          <dl className="relative overflow-hidden rounded-2xl border border-gold/25 bg-white p-5 text-sm shadow-sm">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-gold via-marun to-marun-dark"
+            />
+            <div className="flex justify-between gap-4 pl-2">
               <dt className="text-neutral-500">Pemilik</dt>
               <dd className="text-right font-medium text-neutral-800">{umkm.pemilik}</dd>
             </div>
-            <div className="flex justify-between gap-4">
+            <div className="flex justify-between gap-4 border-t border-black/5 pt-3 pl-2">
               <dt className="text-neutral-500">Alamat</dt>
               <dd className="text-right font-medium text-neutral-800">{umkm.alamat}</dd>
             </div>
-            <div className="flex flex-wrap justify-end gap-2 pt-1">
+            <div className="flex flex-wrap justify-end gap-2 pt-1 pl-2">
               {umkm.layanan_kirim && <Badge icon={<IconTruck className="h-3.5 w-3.5" />}>Layanan Kirim</Badge>}
               {umkm.terima_custom && <Badge icon={<IconScissors className="h-3.5 w-3.5" />}>Terima Custom</Badge>}
               {umkm.bisa_dikunjungi && <Badge icon={<IconCheck className="h-3.5 w-3.5" />}>Bisa Dikunjungi</Badge>}
@@ -143,13 +164,73 @@ export default function DetailUmkmPage({ params }) {
         </div>
       </Reveal>
 
+        {/* Jam & lokasi */}
+        <Reveal delay={150}>
+          <section className="mt-10 grid items-stretch gap-8 lg:grid-cols-2">
+          <div className="flex flex-col">
+            <h2 className="flex h-8 items-center gap-2 font-heading text-xl font-bold text-marun-dark">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marun/10">
+                <IconMapPin className="h-4 w-4 text-marun" />
+              </span>
+              Lokasi
+            </h2>
+            <p className="mt-2 text-sm text-neutral-500">{umkm.alamat}</p>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-gold/20 shadow-sm">
+              <MapView
+                points={[umkm]}
+                zoom={15}
+                className="h-72 md:h-80"
+              />
+            </div>
+            <a
+              href={gmapsDirectionUrl(umkm.koordinat.lat, umkm.koordinat.lng)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-4 w-full"
+            >
+              <IconDirections className="h-5 w-5" />
+              Rute ke Lokasi (Google Maps)
+            </a>
+          </div>
+
+          <div className="flex flex-col">
+            <h2 className="flex h-8 items-center gap-2 font-heading text-xl font-bold text-marun-dark">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marun/10">
+                <IconClock className="h-4 w-4 text-marun" />
+              </span>
+              Jam Operasional
+            </h2>
+            <p className="mt-2 text-sm text-neutral-500">Jadwal kunjungan setiap hari</p>
+            <dl className="mt-4 overflow-hidden rounded-2xl border border-gold/20 bg-white text-sm shadow-sm">
+              <JamRow hari="Senin – Jumat" jam={umkm.jam_buka.senin_jumat} />
+              <JamRow hari="Sabtu" jam={umkm.jam_buka.sabtu} />
+              <JamRow hari="Minggu" jam={umkm.jam_buka.minggu} last />
+            </dl>
+
+            <div className="mt-6 flex-1 rounded-2xl border border-gold/20 bg-white p-5 text-sm shadow-sm">
+              <h3 className="flex items-center gap-2 font-semibold text-neutral-800">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marun/10">
+                  <IconTruck className="h-4 w-4 text-marun" />
+                </span>
+                Info Pengiriman
+              </h3>
+              <p className="mt-3 text-neutral-600">
+                {umkm.layanan_kirim
+                  ? "Melayani pengiriman ke seluruh Indonesia melalui ekspedisi. Hubungi via WhatsApp untuk estimasi ongkos kirim dan ketersediaan stok."
+                  : "Saat ini belum melayani pengiriman. Silakan kunjungi langsung lokasi usaha."}
+              </p>
+            </div>
+          </div>
+          </section>
+        </Reveal>
+
         <SongketDivider className="my-14" />
 
         {/* Cerita UMKM */}
         <Reveal>
           <section className="mx-auto max-w-3xl flex flex-col items-center">
           <p className="eyebrow accent-underline accent-underline-center justify-center">Kisah Usaha</p>
-          <h2 className="mt-3 font-heading text-2xl font-bold text-neutral-900 md:text-3xl text-center">
+          <h2 className="mt-3 font-heading text-2xl font-bold text-marun-dark md:text-3xl text-center">
             Cerita di Balik {umkm.nama}
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed text-neutral-600 text-justify">
@@ -157,13 +238,20 @@ export default function DetailUmkmPage({ params }) {
           </p>
 
           {umkm.penghargaan?.length > 0 && (
-            <div className="mt-8 rounded-2xl border border-gold/30 bg-gold/5 p-6 w-full text-center">
+            <div className="relative mt-8 w-full overflow-hidden rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/10 via-gold/5 to-marun/5 p-6 text-center shadow-sm">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent"
+              />
               <h3 className="font-heading text-lg font-semibold text-marun text-center">
                 Penghargaan & Prestasi
               </h3>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-4 space-y-2.5">
                 {umkm.penghargaan.map((p, i) => (
-                  <li key={i} className="flex items-center justify-center gap-2 text-sm text-neutral-700">
+                  <li
+                    key={i}
+                    className="flex items-center justify-center gap-2.5 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm"
+                  >
                     <IconCheck className="h-4 w-4 shrink-0 text-gold-dark" />
                     {p}
                   </li>
@@ -181,7 +269,7 @@ export default function DetailUmkmPage({ params }) {
           <Reveal>
             <div className="text-center">
               <p className="eyebrow accent-underline accent-underline-center justify-center">Katalog</p>
-              <h2 className="mt-3 font-heading text-2xl font-bold text-neutral-900 md:text-3xl">
+              <h2 className="mt-3 font-heading text-2xl font-bold text-marun-dark md:text-3xl">
                 Produk Unggulan
               </h2>
             </div>
@@ -202,13 +290,13 @@ export default function DetailUmkmPage({ params }) {
           <section className="mt-16">
             <div className="text-center">
               <p className="eyebrow accent-underline accent-underline-center justify-center">Dokumentasi</p>
-              <h2 className="mt-3 font-heading text-2xl font-bold text-neutral-900 md:text-3xl">
+              <h2 className="mt-3 font-heading text-2xl font-bold text-marun-dark md:text-3xl">
                 Dokumentasi Galeri
               </h2>
             </div>
             <div className="mt-10 grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
               {semuaFoto.map((foto, i) => (
-                <div key={i} className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition hover:shadow-md">
+                <div key={i} className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-gold/20 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-lg">
                   <Image
                     src={foto}
                     alt={`Galeri ${umkm.nama} ${i + 1}`}
@@ -216,60 +304,10 @@ export default function DetailUmkmPage({ params }) {
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover transition duration-300 group-hover:scale-105"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                 </div>
               ))}
             </div>
-          </section>
-        </Reveal>
-
-        {/* Jam & lokasi */}
-        <Reveal>
-          <section className="mt-16 grid gap-8 lg:grid-cols-2">
-          <div>
-            <h2 className="flex items-center gap-2 font-heading text-xl font-bold text-neutral-900">
-              <IconClock className="h-5 w-5 text-marun" />
-              Jam Operasional
-            </h2>
-            <dl className="mt-4 overflow-hidden rounded-2xl border border-black/5 bg-white text-sm shadow-sm">
-              <JamRow hari="Senin – Jumat" jam={umkm.jam_buka.senin_jumat} />
-              <JamRow hari="Sabtu" jam={umkm.jam_buka.sabtu} />
-              <JamRow hari="Minggu" jam={umkm.jam_buka.minggu} last />
-            </dl>
-
-            <div className="mt-6 rounded-2xl border border-black/5 bg-white p-5 text-sm shadow-sm">
-              <h3 className="flex items-center gap-2 font-semibold text-neutral-800">
-                <IconTruck className="h-5 w-5 text-marun" />
-                Info Pengiriman
-              </h3>
-              <p className="mt-2 text-neutral-600">
-                {umkm.layanan_kirim
-                  ? "Melayani pengiriman ke seluruh Indonesia melalui ekspedisi. Hubungi via WhatsApp untuk estimasi ongkos kirim dan ketersediaan stok."
-                  : "Saat ini belum melayani pengiriman. Silakan kunjungi langsung lokasi usaha."}
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="flex items-center gap-2 font-heading text-xl font-bold text-neutral-900">
-              <IconMapPin className="h-5 w-5 text-marun" />
-              Lokasi
-            </h2>
-            <p className="mt-2 text-sm text-neutral-500">{umkm.alamat}</p>
-            <MapView
-              points={[umkm]}
-              zoom={15}
-              className="mt-4 h-72 md:h-80"
-            />
-            <a
-              href={gmapsDirectionUrl(umkm.koordinat.lat, umkm.koordinat.lng)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-4 w-full"
-            >
-              <IconDirections className="h-5 w-5" />
-              Rute ke Lokasi (Google Maps)
-            </a>
-          </div>
           </section>
         </Reveal>
 
@@ -289,7 +327,7 @@ export default function DetailUmkmPage({ params }) {
 
 function Badge({ icon, children }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-gading px-2.5 py-1 text-xs font-medium text-neutral-700">
+    <span className="inline-flex items-center gap-1 rounded-full bg-gold/12 px-2.5 py-1 text-xs font-medium text-gold-dark ring-1 ring-inset ring-gold/30">
       {icon}
       {children}
     </span>
@@ -302,7 +340,7 @@ function SocialLink({ href, icon, label }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:border-marun hover:text-marun"
+      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-gold/25 bg-white px-4 py-2.5 text-sm font-medium text-neutral-700 shadow-sm transition hover:border-marun hover:text-marun hover:shadow-md"
     >
       {icon}
       {label}
@@ -315,7 +353,13 @@ function JamRow({ hari, jam, last }) {
   return (
     <div className={`flex items-center justify-between px-5 py-3 ${last ? "" : "border-b border-black/5"}`}>
       <span className="text-neutral-600">{hari}</span>
-      <span className={`font-medium ${tutup ? "text-red-600" : "text-neutral-800"}`}>{jam}</span>
+      <span
+        className={`rounded-full px-3 py-1 text-xs font-semibold ${
+          tutup ? "bg-marun/10 text-marun" : "bg-emerald-500/10 text-emerald-700"
+        }`}
+      >
+        {jam}
+      </span>
     </div>
   );
 }
