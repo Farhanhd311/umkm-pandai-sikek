@@ -269,6 +269,69 @@
       "penghargaan": [
         "Kurang lebih 20 sertifikat dan penghargaan usaha"
       ]
+    },
+    {
+      "id": 5,
+      "slug": "bumi-tani",
+      "nama": "Bumi Tani",
+      "pemilik": "Rizal",
+      "tahun_berdiri": 2025,
+      "alamat": "Jl. TVRI, Jorong Baruah, Nagari Pandai Sikek, Kec. X Koto, Kab. Tanah Datar",
+      "jorong": "Baruah",
+      "koordinat": { "lat": -0.4027535, "lng": 100.3961864 },
+      "kategori": "Agrowisata",
+      "deskripsi": "Toko sarana pertanian yang menyediakan berbagai kebutuhan petani, mulai dari bibit tanaman, pupuk, hingga aneka jenis pestisida seperti fungisida, insektisida, herbisida, akarisida, dan metaldehida. Bumi Tani hadir dengan pendekatan konsultatif layaknya 'apotek tanaman', di mana setiap petani yang datang akan mendapatkan saran perawatan yang tepat dan sesuai kondisi tanamannya.",
+      "cerita": "Sebelum mendirikan Bumi Tani, Bapak Rizal telah lama bergelut di dunia pertanian sebagai sales sarana pertanian, berkeliling dari satu daerah ke daerah lain untuk menawarkan pupuk dan pestisida kepada para petani. Dari pengalaman panjang itu, ia banyak menyerap keluhan, kebutuhan, dan kebiasaan petani di lapangan secara langsung.\n\nBerbekal modal awal sebesar Rp5 juta dan tekad yang kuat untuk mandiri, pada Mei 2025 Bapak Rizal akhirnya memutuskan membuka toko sendiri yang diberinya nama Bumi Tani. Nama ini mencerminkan harapannya agar usaha ini dapat menjadi tumpuan dan sahabat sejati bagi para petani dalam merawat hasil bumi mereka. Toko ini menyediakan berbagai kebutuhan pertanian, mulai dari bibit tanaman, pupuk, hingga beragam jenis pestisida.\n\nMeskipun terbilang baru, Bumi Tani tumbuh dari kepercayaan yang dibangun secara pelan-pelan melalui pendekatan personal, bukan promosi besar-besaran. Yang membedakan Bumi Tani dari toko pertanian pada umumnya adalah perannya yang lebih menyerupai 'apotek tanaman'. Mayoritas pelanggan tidak sekadar datang untuk membeli, melainkan terlebih dahulu menceritakan keluhan atau gejala penyakit yang menyerang tanaman mereka. Bapak Rizal kemudian akan memberikan saran dan meresepkan produk yang paling tepat sesuai kondisi tanaman, termasuk menyesuaikan rekomendasi perawatan antara musim kemarau dan musim hujan.\n\nPendekatan personal dan konsultatif inilah yang membuat pelanggan tetap setia datang langsung ke toko. Hal ini pula yang menjadi alasan mengapa Bumi Tani belum beralih ke sistem penjualan online, karena banyak petani di wilayah tersebut lebih mempercayai interaksi tatap muka. Selain itu, Bumi Tani juga transparan dalam menjelaskan produk yang dijualnya. Misalnya, informasi kedaluwarsa pada kemasan pestisida sebenarnya berkaitan dengan ketentuan pajak, bukan penurunan kandungan atau efektivitas produk itu sendiri.",
+      "produk_unggulan": [
+        {
+          "nama": "Zat Pengatur Tumbuh (ZPT)",
+          "deskripsi": "Produk pengatur pertumbuhan tanaman untuk mempercepat perkecambahan, pembentukan buah, dan pemanjangan batang secara optimal.",
+          "harga_min": 20000,
+          "harga_max": 500000,
+          "foto": "/images/umkm/bumi-tani/produk/zpt-tanaman.png"
+        },
+        {
+          "nama": "Fungisida",
+          "deskripsi": "Obat jamur tanaman untuk mengendalikan penyakit busuk daun, bercak daun, karat daun, embun tepung, dan penyakit layu akibat cendawan.",
+          "harga_min": 20000,
+          "harga_max": 500000,
+          "foto": "/images/umkm/bumi-tani/produk/fungisida.png"
+        },
+        {
+          "nama": "Insektisida",
+          "deskripsi": "Pestisida untuk mengendalikan serangga hama seperti kutu daun, wereng, walang sangit, dan berbagai jenis serangga pengganggu tanaman lainnya.",
+          "harga_min": 20000,
+          "harga_max": 500000,
+          "foto": "/images/umkm/bumi-tani/produk/insektisida.png"
+        }
+      ],
+      "foto_utama": "/images/umkm/bumi-tani/cover/cover.png",
+      "galeri": [
+        "/images/umkm/bumi-tani/galeri/galeri-1.png",
+        "/images/umkm/bumi-tani/galeri/galeri-2.png",
+        "/images/umkm/bumi-tani/galeri/galeri-3.png",
+        "/images/umkm/bumi-tani/galeri/galeri-5.png",
+        "/images/umkm/bumi-tani/galeri/galeri-7.png",
+        "/images/umkm/bumi-tani/galeri/galeri-8.png",
+        "/images/umkm/bumi-tani/galeri/galeri-9.png"
+      ],
+      "jam_buka": {
+        "senin_jumat": "08.00 - 17.00 WIB",
+        "sabtu": "08.00 - 17.00 WIB",
+        "minggu": "Tutup"
+      },
+      "kontak": {
+        "whatsapp": "6281374903543",
+        "instagram": "",
+        "facebook": "",
+        "tokopedia": "",
+        "shopee": "",
+        "tiktok": ""
+      },
+      "bisa_dikunjungi": true,
+      "layanan_kirim": false,
+      "terima_custom": false,
+      "penghargaan": []
     }
   ]
 }
