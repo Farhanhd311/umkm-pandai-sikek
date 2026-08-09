@@ -94,11 +94,11 @@ export default function TentangPage() {
             <div className="order-1 lg:order-2 flex justify-center">
               <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl border border-gold/30 shadow-lg">
                 <Image
-                  src="/images/tim-kkn.svg"
+                  src="/images/tim-kkn.jpg"
                   alt="Tim KKN Nagari Pandai Sikek"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
