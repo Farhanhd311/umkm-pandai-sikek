@@ -2,118 +2,88 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import SongketDivider from "@/components/SongketDivider";
 import Reveal from "@/components/Reveal";
-import { IconScissors, IconCheck } from "@/components/Icons";
+import { IconCheck, IconUser, IconMapPin, IconShop, IconTruck } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata = {
-  title: "Tentang",
+  title: "Tentang Program KKN",
   description:
-    "Sejarah singkat Nagari Pandai Sikek serta informasi program KKN dan tim yang mengembangkan direktori UMKM ini.",
+    "Informasi tim KKN Universitas Andalas dan Penanggung Jawab pengembang direktori digital UMKM Nagari Pandai Sikek.",
 };
 
-const TIM = [
-  { nama: "Koordinator KKN", peran: "Ketua Kelompok" },
-  { nama: "Divisi Data & Survei", peran: "Pendataan UMKM" },
-  { nama: "Divisi Media & Dokumentasi", peran: "Foto & Konten" },
-  { nama: "Divisi Teknologi", peran: "Pengembangan Website" },
+const MISI = [
+  "Mendata dan memetakan pelaku UMKM di seluruh jorong Nagari Pandai Sikek.",
+  "Membangun platform direktori digital interaktif yang mudah diakses publik.",
+  "Meningkatkan daya saing dan jangkauan pemasaran produk lokal secara digital.",
+  "Mempermudah wisatawan dan calon pembeli menemukan lokasi serta kontak resmi UMKM.",
 ];
 
-const MISI = [
-  "Mendata dan memetakan UMKM pengrajin di Nagari Pandai Sikek.",
-  "Membuat direktori digital agar produk lebih mudah ditemukan.",
-  "Meningkatkan literasi digital pelaku UMKM.",
-  "Melestarikan keberagaman produk dan budaya lokal Nagari Pandai Sikek.",
+const PILAR_PROGRAM = [
+  {
+    judul: "Pendataan Digital UMKM",
+    deskripsi:
+      "Mengumpulkan data rinci mulai dari profil usaha, produk unggulan, galeri foto, hingga kontak resmi seluruh UMKM di Nagari Pandai Sikek.",
+    icon: IconShop,
+  },
+  {
+    judul: "Peta Interaktif GIS",
+    deskripsi:
+      "Integrasi peta spasial berbasis koordinat presisi Google Maps untuk membantu navigasi pengunjung menuju lokasi UMKM.",
+    icon: IconMapPin,
+  },
+  {
+    judul: "Konektivitas Langsung",
+    deskripsi:
+      "Memfasilitasi pembeli untuk berkomunikasi dan bertransaksi langsung dengan pemilik UMKM tanpa perantara via WhatsApp & Media Sosial.",
+    icon: IconTruck,
+  },
 ];
+
+const PENANGGUNG_JAWAB = {
+  nama: "Farhan Fitrahadi",
+  nim: "2311522037",
+  jurusan: "Sistem Informasi",
+  fakultas: "Teknologi Informasi",
+  universitas: "Universitas Andalas (UNAND)",
+  peran: "Penanggung Jawab Website & Digitalisasi UMKM",
+  foto: "/images/farhan.jpeg",
+};
 
 export default function TentangPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Tentang"
-        title="Tentang Nagari & Program KKN"
-        description="Mengenal lebih dekat Nagari Pandai Sikek serta program KKN yang melahirkan direktori digital UMKM ini."
+        eyebrow="Program KKN"
+        title="Tim KKN & Penanggung Jawab"
+        description="Mengenal program Kuliah Kerja Nyata (KKN) Universitas Andalas di Nagari Pandai Sikek serta Penanggung Jawab pengembangan direktori UMKM digital ini."
       />
 
-      {/* Sejarah nagari */}
-      <section className="container py-16 md:py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <Reveal duration={700}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-gold/30 shadow-md">
-              <Image
-                src="/images/pandaisikek.jpg"
-                alt="Nagari Pandai Sikek"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gold/50 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/30" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center select-none">
-                <h3 className="font-heading text-3xl font-bold text-white drop-shadow-md md:text-4xl lg:text-5xl leading-tight">
-                  Nagari Pandai Sikek
-                </h3>
-                <span className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-gold drop-shadow-md">
-                  Kecamatan X Koto
-                </span>
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={150} duration={700}>
-            <p className="eyebrow accent-underline">Tentang Nagari</p>
-            <h2 className="mt-4 font-heading text-3xl font-bold text-neutral-900 md:text-4xl">
-              Pandai Sikek, Nagari Kaya Karya
-            </h2>
-            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-600">
-              <p>
-                Nagari Pandai Sikek terletak di lereng Gunung Singgalang,
-                Kecamatan X Koto, Kabupaten Tanah Datar, Sumatera Barat. Nagari
-                ini dikenal dengan kekayaan budaya dan keberagaman usaha lokal
-                masyarakatnya yang meliputi berbagai sektor, mulai dari kerajinan
-                tangan, kuliner, aksesoris, hingga produk kreatif lainnya.
-              </p>
-              <p>
-                Kerajinan tenun songket dan ukiran kayu memang menjadi salah satu
-                ikon nagari ini, namun kekayaan usaha masyarakat Pandai Sikek
-                jauh lebih beragam dan terus berkembang dari generasi ke generasi.
-              </p>
-              <p>
-                Melalui direktori digital ini, seluruh pelaku UMKM Pandai Sikek
-                dari berbagai sektor dapat memperkenalkan produk dan jasa mereka
-                kepada masyarakat luas, mendorong pertumbuhan ekonomi lokal
-                secara menyeluruh.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <SongketDivider />
-
-      {/* Program KKN */}
+      {/* Program KKN Overview */}
       <section className="container py-16 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal duration={700}>
             <div className="order-2 lg:order-1">
-              <p className="eyebrow accent-underline">Program</p>
-              <h2 className="mt-4 font-heading text-3xl font-bold text-neutral-900">
-                Kuliah Kerja Nyata (KKN)
+              <p className="eyebrow accent-underline">Program KKN</p>
+              <h2 className="mt-4 font-heading text-3xl font-bold text-neutral-900 md:text-4xl">
+                Digitalisasi UMKM Nagari Pandai Sikek
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-neutral-600">
-                Direktori UMKM ini dikembangkan sebagai salah satu program kerja
-                mahasiswa <strong>{site.kkn.universitas}</strong> pada{" "}
+              <p className="mt-5 text-[15px] leading-relaxed text-neutral-600 text-justify">
+                Website Direktori UMKM ini dikembangkan sebagai salah satu program kerja utama
+                mahasiswa <strong>{site.kkn.universitas}</strong> dalam kegiatan{" "}
                 <strong>{site.kkn.periode}</strong> di Nagari Pandai Sikek.
-                Tujuannya adalah membantu para pelaku UMKM memasarkan produk secara
-                digital sekaligus melestarikan warisan budaya nagari.
+                Program ini bertujuan memodernisasi pemasaran usaha lokal masyarakat melalui media digital secara berkelanjutan.
               </p>
 
               <h3 className="mt-8 font-heading text-lg font-semibold text-marun">
-                Misi Program
+                Fokus Utama Program
               </h3>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-4 space-y-3">
                 {MISI.map((m, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                    <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-dark" />
-                    {m}
+                  <li key={i} className="flex items-start gap-3 text-sm text-neutral-700">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-marun/10 text-marun mt-0.5">
+                      <IconCheck className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-justify">{m}</span>
                   </li>
                 ))}
               </ul>
@@ -121,14 +91,14 @@ export default function TentangPage() {
           </Reveal>
 
           <Reveal delay={150} duration={700}>
-            <div className="order-1 lg:order-2">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-3xl border border-gold/30 shadow-md">
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl border border-gold/30 shadow-lg">
                 <Image
-                  src="/images/tim-kkn.svg"
+                  src="/images/tim-kkn.jpg"
                   alt="Tim KKN Nagari Pandai Sikek"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
@@ -136,39 +106,122 @@ export default function TentangPage() {
         </div>
       </section>
 
-      {/* Tim */}
+      <SongketDivider />
+
+      {/* Penanggung Jawab Section */}
       <section className="bg-white py-16 md:py-20">
         <div className="container">
           <Reveal>
             <div className="text-center">
               <p className="eyebrow accent-underline accent-underline-center justify-center">
-                Tim Pelaksana
+                Penanggung Jawab
               </p>
-              <h2 className="mt-3 font-heading text-3xl font-bold text-neutral-900">
-                Tim KKN Pandai Sikek {site.kkn.tahun}
+              <h2 className="mt-3 font-heading text-3xl font-bold text-neutral-900 md:text-4xl">
+                Penanggung Jawab Website
               </h2>
-              <p className="mx-auto mt-3 max-w-xl text-sm text-neutral-500">
-                Kolaborasi mahasiswa lintas divisi dalam mewujudkan direktori
-                digital UMKM Nagari Pandai Sikek.
+              <p className="mx-auto mt-3 max-w-xl text-balance text-sm text-neutral-500">
+                Mahasiswa pengembang dan penanggung jawab teknis platform direktori digital UMKM Pandai Sikek.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {TIM.map((t, i) => (
-              <Reveal key={i} delay={i * 80}>
-                <div className="rounded-2xl border border-black/5 bg-gading p-6 text-center shadow-sm">
-                  <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-marun/10 text-marun">
-                    <IconScissors className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 font-heading font-semibold text-neutral-900">
-                    {t.nama}
-                  </h3>
-                  <p className="mt-1 text-sm text-neutral-500">{t.peran}</p>
+          <div className="mt-12 flex justify-center">
+            <div className="w-full max-w-3xl">
+              <Reveal delay={100}>
+                <div className="group relative overflow-hidden rounded-3xl border border-gold/30 bg-gading p-8 shadow-xl transition hover:border-gold hover:shadow-2xl md:p-10">
+                  {/* Decorative Background Accent */}
+                  <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gold/10 blur-3xl transition group-hover:bg-gold/20" />
+                  <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-marun/10 blur-3xl" />
+
+                  <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row md:items-center">
+                    {/* Profile Photo - Perfectly Symmetrical Height */}
+                    <div className="relative shrink-0 flex flex-col items-center">
+                      <div className="relative h-52 w-52 overflow-hidden rounded-2xl border-2 border-gold/40 shadow-lg ring-4 ring-gold/10 md:h-[240px] md:w-[200px]">
+                        <Image
+                          src={PENANGGUNG_JAWAB.foto}
+                          alt={PENANGGUNG_JAWAB.nama}
+                          fill
+                          sizes="240px"
+                          className="object-cover transition duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-marun px-3.5 py-1 text-[11px] font-semibold tracking-wider text-white shadow-md uppercase">
+                        PJ Website
+                      </div>
+                    </div>
+
+                    {/* Profile Details */}
+                    <div className="flex-1 text-center md:text-left">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white px-3 py-1 text-xs font-semibold text-marun">
+                        <IconUser className="h-3.5 w-3.5" />
+                        <span>Mahasiswa KKN UNAND 2026</span>
+                      </div>
+
+                      <h3 className="mt-3 font-heading text-2xl font-bold text-neutral-900 md:text-3xl">
+                        {PENANGGUNG_JAWAB.nama}
+                      </h3>
+                      <p className="mt-1 text-sm font-semibold text-gold-dark">
+                        NIM: {PENANGGUNG_JAWAB.nim}
+                      </p>
+
+                      <div className="mt-5 space-y-2.5 rounded-2xl border border-black/5 bg-white p-4 text-xs text-neutral-700 shadow-sm md:text-sm">
+                        <div className="flex flex-col justify-between gap-1 border-b border-black/5 pb-2 sm:flex-row sm:items-center">
+                          <span className="font-semibold text-neutral-500">Jurusan:</span>
+                          <span className="font-medium text-neutral-900">{PENANGGUNG_JAWAB.jurusan}</span>
+                        </div>
+                        <div className="flex flex-col justify-between gap-1 border-b border-black/5 pb-2 sm:flex-row sm:items-center">
+                          <span className="font-semibold text-neutral-500">Fakultas:</span>
+                          <span className="font-medium text-neutral-900">{PENANGGUNG_JAWAB.fakultas}</span>
+                        </div>
+                        <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-center">
+                          <span className="font-semibold text-neutral-500">Universitas:</span>
+                          <span className="font-medium text-marun">{PENANGGUNG_JAWAB.universitas}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
-            ))}
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pilar Hasil Program Grid */}
+      <section className="container py-16 md:py-20">
+        <Reveal>
+          <div className="text-center">
+            <p className="eyebrow accent-underline accent-underline-center justify-center">
+              Hasil Program
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-neutral-900 md:text-4xl">
+              Keunggulan Platform Direktori
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-balance text-sm text-neutral-500">
+              Hasil karya digital yang dirancang untuk memberikan kemudahan akses bagi seluruh pemangku kepentingan.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {PILAR_PROGRAM.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <Reveal key={index} delay={index * 100}>
+                <div className="h-full rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-marun/10 text-marun">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 font-heading text-xl font-bold text-neutral-900">
+                    {item.judul}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 text-justify">
+                    {item.deskripsi}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
     </>

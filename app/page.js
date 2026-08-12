@@ -93,20 +93,20 @@ export default function HomePage() {
               Pandai Sikek, Nagari Kaya Karya
             </h2>
             <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-neutral-600">
-              <p>
+              <p className="text-justify">
                 Nagari Pandai Sikek terletak di lereng Gunung Singgalang,
                 Kecamatan X Koto, Kabupaten Tanah Datar, Sumatera Barat. Nagari
                 ini dikenal dengan kekayaan budaya dan keberagaman usaha lokal
                 masyarakatnya, mulai dari kerajinan tangan, kuliner, hingga
                 produk khas Minangkabau lainnya.
               </p>
-              <p>
+              <p className="text-justify">
                 Salah satu keunggulan utamanya adalah tenun songket dan ukiran
                 kayu yang telah menjadi identitas budaya turun-temurun. Namun
                 selain itu, banyak pula usaha kuliner, aksesoris, dan berbagai
                 produk kreatif lainnya yang siap ditemukan di sini.
               </p>
-              <p>
+              <p className="text-justify">
                 Melalui direktori digital ini, seluruh pelaku UMKM Pandai Sikek
                 dapat memperkenalkan produk dan jasa mereka kepada masyarakat
                 luas, mendorong pertumbuhan ekonomi lokal secara menyeluruh.

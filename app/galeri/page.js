@@ -1,6 +1,5 @@
 import PageHeader from "@/components/PageHeader";
 import GaleriGrid from "@/components/GaleriGrid";
-import Reveal from "@/components/Reveal";
 import { getAllGaleri, getAllUmkm } from "@/lib/umkm";
 
 export const metadata = {
@@ -15,17 +14,13 @@ export default function GaleriPage() {
 
   return (
     <>
-      <Reveal>
-        <PageHeader
-          eyebrow="Galeri"
-          title="Galeri Karya Pandai Sikek"
-          description="Kumpulan foto produk dan karya dari berbagai pelaku UMKM Nagari Pandai Sikek. Saring berdasarkan UMKM di bawah ini."
-        />
-      </Reveal>
+      <PageHeader
+        eyebrow="Galeri"
+        title="Galeri Karya Pandai Sikek"
+        description="Kumpulan foto produk dan karya dari berbagai pelaku UMKM Nagari Pandai Sikek. Saring berdasarkan UMKM di bawah ini."
+      />
       <section className="container py-14 md:py-16">
-        <Reveal delay={150}>
-          <GaleriGrid items={items} umkmList={umkmList} />
-        </Reveal>
+        <GaleriGrid items={items} umkmList={umkmList} />
       </section>
     </>
   );

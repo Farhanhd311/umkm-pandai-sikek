@@ -51,27 +51,37 @@ export default function DetailUmkmPage({ params }) {
 
   const sosial = [
     umkm.kontak.instagram && {
-      href: `https://instagram.com/${umkm.kontak.instagram}`,
+      href: umkm.kontak.instagram.startsWith("http")
+        ? umkm.kontak.instagram
+        : `https://instagram.com/${umkm.kontak.instagram}`,
       icon: <IconInstagram className="h-4 w-4" />,
       label: "Instagram",
     },
     umkm.kontak.facebook && {
-      href: `https://facebook.com/${umkm.kontak.facebook}`,
+      href: umkm.kontak.facebook.startsWith("http")
+        ? umkm.kontak.facebook
+        : `https://facebook.com/${umkm.kontak.facebook}`,
       icon: <IconFacebook className="h-4 w-4" />,
       label: "Facebook",
     },
     umkm.kontak.tokopedia && {
-      href: `https://tokopedia.com/${umkm.kontak.tokopedia}`,
+      href: umkm.kontak.tokopedia.startsWith("http")
+        ? umkm.kontak.tokopedia
+        : `https://tokopedia.com/${umkm.kontak.tokopedia}`,
       icon: <IconShop className="h-4 w-4" />,
       label: "Tokopedia",
     },
     umkm.kontak.shopee && {
-      href: `https://shopee.co.id/${umkm.kontak.shopee}`,
+      href: umkm.kontak.shopee.startsWith("http")
+        ? umkm.kontak.shopee
+        : `https://shopee.co.id/${umkm.kontak.shopee}`,
       icon: <IconShop className="h-4 w-4" />,
       label: "Shopee",
     },
     umkm.kontak.tiktok && {
-      href: `https://tiktok.com/@${umkm.kontak.tiktok.replace(/\s+/g, "")}`,
+      href: umkm.kontak.tiktok.startsWith("http")
+        ? umkm.kontak.tiktok
+        : `https://tiktok.com/@${umkm.kontak.tiktok.replace(/\s+/g, "")}`,
       icon: <IconTikTok className="h-4 w-4" />,
       label: "TikTok",
     },
