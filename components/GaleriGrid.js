@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+
 
 export default function GaleriGrid({ items, umkmList }) {
   const [aktif, setAktif] = useState("Semua");
@@ -39,10 +39,8 @@ export default function GaleriGrid({ items, umkmList }) {
       {/* Masonry via CSS columns */}
       <div className="mt-10 [column-gap:1.25rem] columns-2 md:columns-3 lg:columns-4">
         {hasil.map((it, i) => (
-          <Reveal
+          <figure
             key={it.foto + i}
-            as="figure"
-            delay={Math.min(i * 60, 480)}
             className="group relative mb-5 break-inside-avoid overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm"
           >
             <Image
@@ -62,7 +60,7 @@ export default function GaleriGrid({ items, umkmList }) {
                 {it.umkmNama}
               </Link>
             </figcaption>
-          </Reveal>
+          </figure>
         ))}
       </div>
 
