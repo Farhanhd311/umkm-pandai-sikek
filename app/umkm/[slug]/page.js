@@ -159,7 +159,7 @@ export default function DetailUmkmPage({ params }) {
           {/* Kiri: deskripsi, fakta, badge (panel putih agar seimbang dg kartu kanan) */}
           <Reveal delay={80} className="flex flex-col h-full">
             <div className="flex flex-1 flex-col rounded-2xl border border-gold/20 bg-white p-6 shadow-sm sm:p-7">
-              <p className="text-[15px] leading-relaxed text-neutral-700 sm:text-[16px]">
+              <p className="text-[15px] leading-relaxed text-neutral-700 sm:text-[16px] text-justify">
                 {umkm.deskripsi}
               </p>
 
@@ -301,7 +301,7 @@ export default function DetailUmkmPage({ params }) {
             <h2 className="mt-3 text-center font-heading text-2xl font-bold text-marun-dark md:text-3xl">
               Cerita di Balik {umkm.nama}
             </h2>
-            <div className="mt-6 space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-700 text-left sm:text-justify">
+            <div className="mt-6 space-y-5 text-[15px] sm:text-[16px] leading-relaxed text-neutral-700 text-justify">
               {umkm.cerita
                 .split("\n")
                 .map((p) => p.trim())

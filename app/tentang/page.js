@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PageHeader from "@/components/PageHeader";
 import SongketDivider from "@/components/SongketDivider";
 import Reveal from "@/components/Reveal";
 import { IconCheck, IconUser, IconMapPin, IconShop, IconTruck } from "@/components/Icons";
@@ -52,11 +51,42 @@ const PENANGGUNG_JAWAB = {
 export default function TentangPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Program KKN"
-        title="Tim KKN & Penanggung Jawab"
-        description="Mengenal program Kuliah Kerja Nyata (KKN) Universitas Andalas di Nagari Pandai Sikek serta Penanggung Jawab pengembangan direktori UMKM digital ini."
-      />
+      {/* ============ HERO ============ */}
+      <section className="relative flex min-h-[55vh] items-end overflow-hidden md:min-h-[65vh]">
+        {/* Background Photo — geser ke atas 35% agar orang lebih terlihat */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/tim-kkn.jpg"
+            alt="Tim KKN Nagari Pandai Sikek"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "center 35%" }}
+          />
+        </div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/35 to-black/85" />
+        {/* Brand color fade at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-marun-dark/85 via-marun-dark/25 to-transparent" />
+        {/* Gading blend to page background */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-gading to-transparent" />
+
+        {/* Text Content */}
+        <div className="container relative z-10 pb-10 pt-24 text-white md:pb-16 md:pt-36">
+          <p className="eyebrow justify-start text-gold-light animate-fade-in-up text-[10px] tracking-[0.2em] md:text-xs">
+            Program KKN · Universitas Andalas
+          </p>
+          <h1 className="mt-2 max-w-3xl font-heading text-2xl font-bold leading-tight drop-shadow-md sm:text-3xl md:text-5xl">
+            Tim KKN &amp; Penanggung Jawab
+          </h1>
+          <p className="mt-2 max-w-xl text-xs leading-relaxed text-white/80 sm:text-sm md:mt-3 md:max-w-2xl md:text-base">
+            Mengenal program Kuliah Kerja Nyata (KKN) Universitas Andalas di Nagari Pandai Sikek
+            serta Penanggung Jawab pengembangan direktori UMKM digital ini.
+          </p>
+        </div>
+      </section>
 
       {/* Program KKN Overview */}
       <section className="container py-16 md:py-20">
