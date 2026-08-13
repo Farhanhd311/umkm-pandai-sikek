@@ -27,9 +27,22 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    // Set initial invisible state
+    // Cek apakah elemen sudah terlihat di viewport saat pertama kali mount
+    // Jika ya, langsung tampilkan tanpa animasi agar tidak "hilang" di awal
+    const rect = el.getBoundingClientRect();
+    const isAlreadyVisible =
+      rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isAlreadyVisible) {
+      // Elemen sudah ada di viewport → langsung visible, tanpa delay
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+      return;
+    }
+
+    // Set initial invisible state hanya untuk elemen di luar viewport
     el.style.opacity = "0";
-    el.style.transform = "translateY(24px)";
+    el.style.transform = "translateY(14px)";
     el.style.transition = `opacity ${duration}ms ease, transform ${duration}ms ease`;
     el.style.transitionDelay = `${delay}ms`;
 
@@ -41,7 +54,8 @@ export default function Reveal({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.12 }
+      // threshold 0 → langsung trigger begitu 1px elemen masuk viewport
+      { threshold: 0, rootMargin: "0px 0px -30px 0px" }
     );
 
     observer.observe(el);

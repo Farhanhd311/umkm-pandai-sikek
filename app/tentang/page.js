@@ -56,13 +56,12 @@ export default function TentangPage() {
         {/* Background Photo — geser ke atas 35% agar orang lebih terlihat */}
         <div className="absolute inset-0">
           <Image
-            src="/images/tim-kkn.jpg"
+            src="/images/herokkn1.jpeg"
             alt="Tim KKN Nagari Pandai Sikek"
             fill
             priority
             sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: "center 35%" }}
           />
         </div>
 
@@ -128,7 +127,8 @@ export default function TentangPage() {
                   alt="Tim KKN Nagari Pandai Sikek"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top"
+                  className="object-cover"
+                  style={{ objectPosition: "25% top" }}
                 />
               </div>
             </div>
